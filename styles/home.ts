@@ -5,6 +5,7 @@ export const Container = styled.div`
   margin: 0 auto;
   padding: 2.5rem 2.5rem;
   text-align: center;
+  color: var(--letters);
 `;
 
 export const SubTitle = styled.p`
@@ -15,8 +16,11 @@ export const SubTitle = styled.p`
 `;
 
 export const SearchDiv = styled.div`
-  background: var(--gray-500);
-  width: 35vw;
-  height: 35vh;
+  background: var(--box);
+  width: 40vw;
+  height: 40vh;
   margin: 0 auto;
+  padding: 2rem;
+
+  box-shadow: rgb(0 0 0 / 16%) 0px 1px 2px, rgb(0 0 0 / 10%) 0px 1px 2px;
 `;
