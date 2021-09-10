@@ -12,6 +12,27 @@ const initialState = {
   years: [],
   loadingYears: false,
   errorLoadingYears: null,
+
+  price: [],
+  loadingPrice: false,
+  errorLoadingPrice: null,
+
+  vehicle: {
+    brand: {
+      nome: '',
+      codigo: 0,
+    },
+    model: {
+      nome: '',
+      codigo: 0,
+    },
+    year: {
+      nome: '',
+      codigo: 0,
+    }
+  },
+  loadingVehicle: false,
+  errorLoadingVehicle: null,
 }
 
 export const branchesReducer = (state = initialState, action) => {
@@ -36,6 +57,20 @@ export const branchesReducer = (state = initialState, action) => {
         years: action.payload,
         loadingYears: false,
         errorLoadingYears: null,
+      }
+    case types.GET_VEHICLE: 
+      return {
+        ...state,
+        price: action.payload,
+        loadingPrice: false,
+        errorLoadingPrice: null,
+      }
+    case types.SET_VEHICLE:
+      return {
+        ...state,
+        vehicle: action.payload,
+        loadingVehicle: false,
+        errorLoadingVehicle: null,
       }
     default:
       return state
