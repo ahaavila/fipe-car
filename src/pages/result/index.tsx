@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchVehicle } from '../../store/actions/branchesAction';
 import { vehicleStateProps, vehicleProps } from '../../utils/interface';
 
-import { Container, SubTitle } from './styles';
+import { Container, SubTitle } from '../../../styles/result';
 
 export default function Result() {
   const dispatch = useDispatch();

@@ -17,7 +17,7 @@ const select: React.FC<SelectProps> = ({ selectLabel, selectOptions, handleChang
     <Autocomplete 
       options={selectOptions}
       getOptionLabel={(option) => option.nome}
-      style={{ width: '25vw', height: '1.5rem', margin: '0 auto', marginBottom: '2.5rem' }}
+      style={{ width: '25vw', height: '1.5rem', margin: '0 auto', marginBottom: '3.5rem' }}
       renderInput={(params) => <TextField {...params} label={selectLabel} variant="outlined" />}
       onChange={handleChange}
     />

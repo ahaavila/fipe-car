@@ -7,14 +7,21 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Select from '../components/select';
 import { fetchBranches, fetchModels, fetchYears, setVehicle, fetchVehicle } from '../store/actions/branchesAction';
-import { vehicleProps, vehicleType } from '../utils/interface';
+import { vehicleType } from '../utils/interface';
 
 interface stateProps {
-  vehicle: {
-    branches: vehicleType,
-    models: vehicleType,
-    years: vehicleType
-  }
+  branches: [{
+    nome: string,
+    codigo: number,
+  }],
+  models: [{
+    nome: string,
+    codigo: number,
+  }],
+  years: [{
+    nome: string,
+    codigo: number,
+  }]
 }
 
 interface vehicleStateProps {
@@ -28,8 +35,8 @@ export default function Home() {
 
   const dispatch = useDispatch();
   const { branches }: stateProps = useSelector((state: vehicleStateProps) => state.vehicle);
-  const { models }: stateProps = useSelector((state: vehicleProps) => state.vehicle);
-  const { years }: stateProps = useSelector((state: vehicleProps) => state.vehicle);
+  const { models }: stateProps = useSelector((state: vehicleStateProps) => state.vehicle);
+  const { years }: stateProps = useSelector((state: vehicleStateProps) => state.vehicle);
   
   useEffect(() => {
     dispatch(fetchBranches());
@@ -66,9 +73,9 @@ export default function Home() {
       <h1>Tabela Fipe</h1>
       <SubTitle>Consulte o valor de um veículo de forma gratuita</SubTitle>
       <SearchDiv>
-        <Select selectLabel="Marca" selectOptions={branches ? branches : []} handleChange={(event: any, newValue)=> {setNewBranch(newValue)}}/>
-        <Select selectLabel="Modelo" selectOptions={models ? models : []} handleChange={(event: any, newValue) => {setNewModel(newValue)}}/>
-        <Select selectLabel="Ano" selectOptions={years ? years : []} handleChange={(event: any, newValue) => {setNewYear(newValue)}}/>
+        <Select selectLabel="Marca" selectOptions={branches} handleChange={(event: any, newValue)=> {setNewBranch(newValue)}}/>
+        <Select selectLabel="Modelo" selectOptions={models} handleChange={(event: any, newValue) => {setNewModel(newValue)}}/>
+        <Select selectLabel="Ano" selectOptions={years} handleChange={(event: any, newValue) => {setNewYear(newValue)}}/>
         <Link href="/result">
           <LinkButton>Consultar preço</LinkButton>
         </Link>
