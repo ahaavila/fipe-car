@@ -1,7 +1,6 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import { makeStyles } from '@material-ui/core/styles';
 
 interface SelectProps {
   selectLabel: string;
@@ -9,10 +8,10 @@ interface SelectProps {
     nome: string;
     codigo: number;
   }];
-  handleChange: ()  => void;
+  handleChange: (event: any, newValue)  => void;
 }
 
-const select: React.FC = ({ selectLabel, selectOptions, handleChange }: SelectProps) => {
+const select: React.FC<SelectProps> = ({ selectLabel, selectOptions, handleChange }) => {
 
   return (
     <Autocomplete 
