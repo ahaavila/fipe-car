@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/link-passhref */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Container, SubTitle, SearchDiv, LinkButton } from '../../styles/home';
-import Head from 'next/Head';
+import Head from 'next/head';
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
